@@ -1,0 +1,50 @@
+body {
+    font: 11pt Helvetica,Arial;
+    width:600px;
+    background: #333;
+}
+
+ul {
+    list-style: none;
+    padding:0;
+}
+
+input {
+    font-size: 10pt;
+}
+
+.sectiontitle {
+    color:red;
+    text-align: right;
+    width:100%;
+}
+
+.inputfield {
+    color:blue;
+}
+
+.floatingbox {
+    float:left;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    margin:5px;
+    padding:5px;
+}
+
+.list {
+    width:200px;
+}
+
+.detail {
+    width:275px;
+}
+
+.detailimagewrapper {
+    text-align: center;
+}
+
+.detailimage {
+    box-shadow: 5px 5px 5px #888888;
+    border-radius: 8px;
+}

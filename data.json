@@ -1,0 +1,187 @@
+[
+  {
+    "variete": "ail",
+    "image": "ail.png",
+    "rayon": 10
+  },
+    {
+    "variete": "asperge",
+    "image": "asperge.png",
+    "rayon": 40
+  },
+    {
+    "variete": "aubergine",
+    "image": "aubergine",
+    "rayon": 40
+  },
+    {
+    "variete": "avocat",
+    "image": "avocat.png",
+    "rayon": 40
+  },
+    {
+    "variete": "banane",
+    "image": "banane.png",
+    "rayon": 400
+  },
+    {
+    "variete": "broccoli",
+    "image": "broccoli.png",
+    "rayon": 40
+  },
+    {
+    "variete": "cerise",
+    "image": "cerise.png",
+    "rayon": 40
+  },
+    {
+    "variete": "champignon",
+    "image": "champignon.png",
+    "rayon": 10
+  },
+  {
+    "variete": "chou",
+    "image": "chou.png",
+    "rayon": 50
+  },
+    {
+    "variete": "citron",
+    "image": "citron.png",
+    "rayon": 40
+  },
+   {
+    "variete": "concombre",
+    "image": "concombre.png",
+    "rayon": 50
+  },
+     {
+    "variete": "courgette",
+    "image": "courgette.png",
+    "rayon": 50
+  },
+     {
+    "variete": "figue",
+    "image": "figue.png",
+    "rayon": 50
+  },
+     {
+    "variete": "gingembre",
+    "image": "gingembre.png",
+    "rayon": 50
+  },
+     {
+    "variete": "haricot",
+    "image": "haricot.png",
+    "rayon": 50
+  },
+     {
+    "variete": "mais",
+    "image": "mais.png",
+    "rayon": 50
+  },
+     {
+    "variete": "melon",
+    "image": "melon.png",
+    "rayon": 50
+  },
+     {
+    "variete": "myrtille",
+    "image": "myrtille.png",
+    "rayon": 50
+  },
+     {
+    "variete": "oignon",
+    "image": "oignon.png",
+    "rayon": 50
+  },
+     {
+    "variete": "olive",
+    "image": "olive.png",
+    "rayon": 50
+  },
+     {
+    "variete": "orange",
+    "image": "orange.png",
+    "rayon": 50
+  },
+     {
+    "variete": "pasteque",
+    "image": "pasteque.png",
+    "rayon": 50
+  },
+      {
+    "variete": "pomme de terre",
+    "image": "patate.png",
+    "rayon": 50
+  },
+       {
+    "variete": "piment",
+    "image": "piment.png",
+    "rayon": 50
+  },
+       {
+    "variete": "poire",
+    "image": "poire.png",
+    "rayon": 50
+  },
+       {
+    "variete": "poireau",
+    "image": "poireau.png",
+    "rayon": 50
+  },
+       {
+    "variete": "poivron",
+    "image": "poivron.png",
+    "rayon": 50
+  },
+       {
+    "variete": "pomme",
+    "image": "pomme.png",
+    "rayon": 50
+  },
+       {
+    "variete": "potimarron",
+    "image": "potimarron.png",
+    "rayon": 50
+  },
+       {
+    "variete": "potiron",
+    "image": "potiron.png",
+    "rayon": 50
+  },
+       {
+    "variete": "petit pois",
+    "image": "ppois.png",
+    "rayon": 50
+  },
+       {
+    "variete": "prune",
+    "image": "prune.png",
+    "rayon": 50
+  },
+         {
+    "variete": "radis",
+    "image": "radis.png",
+    "rayon": 50
+  },
+         {
+    "variete": "raisin",
+    "image": "raisin.png",
+    "rayon": 50
+  },
+         {
+    "variete": "salade",
+    "image": "salade.png",
+    "rayon": 50
+  },
+  {
+    "variete": "fraise",
+    "image": "fraise.png",
+    "rayon": 20
+  },
+  {
+    "variete": "framboise",
+    "image": "framboise.png",
+    "rayon": 20
+  }
+]

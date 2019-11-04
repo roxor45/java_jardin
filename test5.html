@@ -1,0 +1,175 @@
+    <!DOCTYPE html>
+    <html>
+	<meta charset=utf-8 />
+       <head>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+  <script src="pixi.min.js"></script>  
+
+		  <script>
+var url = "data.json";
+$(document).ready(function() {
+    $.getJSON(url, function(json) {
+        var select = $("<select></select>").attr("id", "menuselect").attr("name", "image");
+        $.each(json, function(index, json) {
+            select.append($("<option></option>").attr("value", json.image).data("rayon", json.rayon).data("image", json.image) // la valeur du rayon
+                .data("json", json) // l'objet complet
+                .text(json.variete));
+        });
+        $("#container").html(select);
+        document.getElementById('selection').onclick = function() {
+            var oOption = $("#menuselect option:checked");
+            vrayon = oOption.data("rayon");
+            vimage = oOption.data("image");
+            createlegume();
+			
+        }
+        })
+    });
+        function createlegume(x, y) {
+            var texture = PIXI.Texture.fromImage('images/' + vimage);
+            // Scale mode for pixelation
+            //texture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
+            // create our little bunny friend..
+            var bunny = new PIXI.Sprite(texture);
+            var graphics = new PIXI.Graphics();
+            graphics.lineStyle(1, 0xFFBD01, 1);
+            //graphics.beginFill(0, 0);
+            graphics.drawCircle(0, 0, +vrayon);
+            graphics.endFill();
+            var group = new PIXI.Container();
+            group.addChild(graphics);
+            // app.stage.addChild(graphics);
+            // enable the bunny to be interactive... this will allow it to respond to mouse and touch events
+            group.interactive = true;
+            // this button mode will mean the hand cursor appears when you roll over the bunny with your mouse
+            group.buttonMode = true;
+            // center the bunny's anchor point
+            bunny.anchor.set(0.5);
+            // make it a bit bigger, so it's easier to grab
+            bunny.scale.set(0.1);
+            // setup events for mouse + touch using
+            // the pointer events
+            group.on('pointerdown', onDragStart)
+			.on('pointerup', onDragEnd)
+			.on('pointerupoutside', onDragEnd)
+			.on('pointermove', onDragMove)
+			.on('pointerover', onButtonOver)
+                // For mouse-only events
+                // .on('mousedown', onDragStart)
+                // .on('mouseup', onDragEnd)
+                // .on('mouseupoutside', onDragEnd)
+                // .on('mousemove', onDragMove);
+                // For touch-only events
+                // .on('touchstart', onDragStart)
+                // .on('touchend', onDragEnd)
+                // .on('touchendoutside', onDragEnd)
+                // .on('touchmove', onDragMove);
+                // move the sprite to its designated position
+            bunny.x = 0;
+            bunny.y = 0;
+            group.addChild(bunny);
+            app.stage.addChild(group);
+            group.position.set(100, 100);
+            // add it to the stage
+            //  app.stage.addChild(bunny);
+		
+			}
+			
+function maskimage(group) {
+    var checkmakimg = document.getElementById("idmaskimage");
+    if (checkmakimg.checked == true) {
+   //     app.stage.addChild(group);
+		console.log(group);
+    } else {
+   //    app.stage.removeChild(group);
+	   console.log(group);
+    }
+}
+
+
+function onButtonOver() {
+//	this.texture = textureButtonOver;
+console.log();
+}
+        function onDragStart(event) {
+            // store a reference to the data
+            // the reason for this is because of multitouch
+            // we want to track the movement of this particular touch
+            this.data = event.data;
+            this.alpha = 0.5;
+            this.dragging = true;
+        }
+
+        function onDragEnd(e) {
+            console.log(e); // your event debug , look in chrome debug.
+            this.alpha = 1;
+            this.dragging = false;
+            // set the interaction data to null
+            this.data = null;
+            e.data.button === 2 && e.currentTarget.parent.removeChild(e.currentTarget); // delete 
+        }
+        // desactivation clic droit dans le vide
+        document.addEventListener('contextmenu', e => {
+            e.preventDefault();
+        });
+
+        function onDragMove() {
+            if (this.dragging) {
+                var newPosition = this.data.getLocalPosition(this.parent);
+                this.x = newPosition.x;
+                this.y = newPosition.y;
+            }
+
+};
+          </script>     
+       </head>
+       <style> 
+
+		body{
+          background-color:#6559EE;   
+          margin:10px;
+          font-weight:bold;
+          font-size: 16px;
+          }
+		  div.bordure {
+border-bottom:1px solid black;
+}
+          select {  
+          color: #777;
+          width:150px;  
+          }
+		  fieldset {  
+          color: #000;
+          width:150px;  
+          }
+		  canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px #D82257 dashed;
+}
+       </style>
+       <body>
+          <h1>Mon potager</h1>
+		<p>  <fieldset><legend>Choisissez un legume</legend>
+          <div id="container"></div>
+
+        </p>
+
+        <p>
+		<input type="button" id="selection" value="selection " /></br>
+		<div class="bordure"></div>
+		cadrillage :<input type="checkbox" onclick="affichecadrillage()" id="checkcadrillage"/></br>
+		masquer fond :<input type="checkbox" onclick="backg()" id="maskbg"/></br>
+		masquer img :<input type="checkbox" onclick="maskimage()" id="idmaskimage"/>
+
+    <script src="dragging.js"></script>  
+        </p>
+            </fieldset>
+        </p>
+
+        
+
+       </body>
+    </html>

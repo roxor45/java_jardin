@@ -1,0 +1,27 @@
+
+
+    <!DOCTYPE html5>
+     <html>
+     <body>
+         <canvas id="canvas1" width="400" height="300" style="border:5px solid black;"></canvas>
+
+<script language="javascript" type="text/javascript">
+var c1=document.getElementById("canvas1");
+var pinceau=c1.getContext("2d");
+
+var ecart = 50; //largeur d'un côté des cases
+//lignes
+for(var h = ecart ; h < c1.height ; h += ecart) {
+   pinceau.moveTo(0, h); //déplacer le pinceau à (x,y) sans tracer
+   pinceau.lineTo(c1.width, h); //tracer jusqu'à (x,y)
+}
+//colonnes
+for(var w = ecart ; w < c1.width ; w += ecart) {
+   pinceau.moveTo(w, 0);
+   pinceau.lineTo(w, c1.height);
+}
+pinceau.stroke();
+</script>
+     </body>
+     </html>
+
